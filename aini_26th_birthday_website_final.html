@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aini — 26th Journey</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Kalam:wght@400;700&display=swap');
+:root{--p:#f5efe5;--p2:#eee5d7;--ink:#40392f;--muted:#81776a;--sage:#77806d;--sage2:#dce0d3;--line:#cfc2b0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--p);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.7}a{color:inherit}
+nav{position:fixed;z-index:20;top:0;left:0;right:0;display:flex;justify-content:center;gap:5px;padding:10px;background:#f5efe5e8;backdrop-filter:blur(12px);border-bottom:1px solid #9682692e;overflow:auto}
+nav a{font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:6px 9px;border-radius:20px;white-space:nowrap}nav a:hover{background:var(--sage2)}
+main{max-width:980px;margin:auto;padding:70px 18px}.hero{min-height:94vh;display:grid;place-items:center;text-align:center}.hero>div{max-width:760px}
+.kicker,.no{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);font-weight:600}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.05}h1{font-size:clamp(58px,11vw,108px);margin:18px 0 8px}h2{font-size:clamp(42px,7vw,68px);margin:5px 0 25px}h3{font-size:30px;margin:5px 0}
+.subtitle,.quote,.lead{font-family:'Cormorant Garamond',serif}.subtitle{font-size:25px;font-style:italic;color:var(--muted)}.lead{font-size:23px;color:var(--muted)}.quote{font-size:30px;line-height:1.25}
+.illus{width:245px;height:245px;border-radius:50%;margin:auto;background:#dce0d3;border:1px solid #c4cbb9;display:grid;place-items:center}.face{width:80%;height:80%;border-radius:50%;background:#e7d9c7;position:relative}.face:before{content:"";position:absolute;width:40%;height:40%;border-radius:50%;background:#d6a982;top:17%;left:30%;box-shadow:0 12px 0 3px #5c4637}.face:after{content:"AINI";position:absolute;bottom:15%;left:35%;font:700 27px Kalam;color:#625447}
+.btn{border:1px solid #9f917f;background:#faf5ec;color:var(--ink);padding:10px 17px;border-radius:999px;cursor:pointer}.section{padding:75px 0 20px}.card{background:#fffaf2b8;border:1px solid var(--line);border-radius:22px;padding:27px;box-shadow:0 18px 50px #4637281f}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mini{padding:17px;text-align:center;border:1px solid var(--line);border-radius:16px;background:#fbf7ef}.mini strong{display:block;font:600 25px 'Cormorant Garamond'}
+.timeline{position:relative}.timeline:before{content:"";position:absolute;left:15px;top:5px;bottom:5px;width:1px;background:var(--line)}.item{position:relative;padding:0 0 25px 45px}.dot{position:absolute;left:9px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--sage);border:3px solid var(--p)}
+.memory{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}.photo{border-radius:19px;overflow:hidden;border:1px solid var(--line);background:#ddd2c3}.photo img{width:100%;height:330px;object-fit:cover;display:block}.caption{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:8px}.note{font:18px Kalam;color:#65584b}
+.stamps,.trail,.places{display:flex;flex-wrap:wrap;gap:9px}.stamp,.peak,.place{padding:8px 13px;border-radius:10px;background:#faf5ec;border:1px solid var(--line);font-family:'Cormorant Garamond';font-size:18px}.peak{border-radius:999px}.mountain{background:linear-gradient(145deg,#eef0e7,#faf5ec);position:relative;overflow:hidden}
+.travel{display:grid;grid-template-columns:1fr 1.5fr;gap:22px;align-items:center}.passport{background:#687364;color:#f6f0e5;border-radius:18px;padding:28px;min-height:270px;box-shadow:0 18px 50px #4637281f;transform:rotate(-1deg)}.passport .title{text-align:center;font:32px 'Cormorant Garamond';margin-top:35px}.passport .name{text-align:center;letter-spacing:.15em;margin-top:38px}
+.chinese{font:38px 'Cormorant Garamond';letter-spacing:.12em}.letter{max-width:770px;margin:auto;background:#fbf6ed;border:1px solid var(--line);padding:clamp(28px,6vw,58px);box-shadow:0 18px 50px #4637281f}.letter p{font:21px/1.65 'Cormorant Garamond';margin:0 0 18px}.signature{font:20px Kalam;margin-top:32px}.surprise{margin-top:25px;text-align:center;padding:30px;background:#e8ebdf;border:1px solid #c8cdbd;border-radius:20px}.hidden{display:none}.wish{padding:17px;border:1px solid var(--line);border-radius:16px;background:#fbf7ef;min-height:110px}.wishes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.wishes b{font:26px 'Cormorant Garamond'}.footer{text-align:center;color:var(--muted);font:22px 'Cormorant Garamond';padding:65px 0 20px}.music{position:fixed;right:14px;bottom:14px;z-index:30}
+@media(max-width:700px){nav{justify-content:flex-start}.grid2,.memory,.travel{grid-template-columns:1fr}.mini-grid{grid-template-columns:1fr 1fr}.wishes{grid-template-columns:1fr 1fr}.photo img{height:280px}}
+@media(max-width:450px){.mini-grid,.wishes{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+<a href="#start">Start</a><a href="#smp">SMP</a><a href="#us">Us</a><a href="#mountains">Mountains</a><a href="#travel">Travel</a><a href="#mandarin">Mandarin</a><a href="#work">Work</a><a href="#calm">Calm</a><a href="#family">Family</a><a href="#letter">Letter</a>
+</nav>
+<main>
+
+<section class="hero" id="start"><div>
+<div class="illus"><div class="face"></div></div>
+<div class="kicker">A little book for Aini · 11 September 2000</div>
+<h1>Aini's 26th Journey</h1>
+<div class="subtitle">somewhere between the pages we've already lived<br>and the ones we haven't read yet.</div>
+<p style="color:var(--muted);max-width:600px;margin:25px auto">A little collection of the mountains, places, work, quiet moments and memories that make up the person I've known since junior high school.</p>
+<a href="#smp"><button class="btn">Open the book →</button></a>
+</div></section>
+
+<section class="section" id="smp"><div class="no">01 · The beginning</div><h2>The girl I met in junior high school.</h2>
+<div class="grid2"><div class="card"><p class="quote">Some friendships begin without either person knowing they will still be here years later.</p><p>We met when we were still in junior high school. Back then, neither of us could have known how many versions of ourselves we would become.</p><p>Different years, different places, different things to worry about — and somehow, you're still here.</p></div>
+<div class="card"><div class="note">A few things that have always felt very Aini:</div><div class="mini-grid" style="margin-top:18px"><div class="mini"><strong>Keras</strong>you definitely have your own mind.</div><div class="mini"><strong>Curious</strong>you like learning and smart people.</div><div class="mini"><strong>Persistent</strong>once you decide, you work for it.</div></div></div></div></section>
+
+<section class="section" id="us"><div class="no">02 · The years between</div><h2>From then to now.</h2>
+<div class="memory"><div class="timeline">
+<div class="item"><span class="dot"></span><div class="no">Junior high school</div><h3>Where it started.</h3><p>Two school girls with no idea how long this friendship would last.</p></div>
+<div class="item"><span class="dot"></span><div class="no">The years after</div><h3>Life got bigger.</h3><p>Different routines and different versions of ourselves, but the friendship stayed.</p></div>
+<div class="item"><span class="dot"></span><div class="no">2025 · Back in Indonesia</div><h3>And then, this.</h3><p>One ordinary little moment that became a memory because we happened to be there together.</p></div>
+</div>
+<div><div class="photo"><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=85" alt="Replace with Aini and dog photo"></div><div class="caption">2025 · Back in Indonesia ♡</div><p class="note">Replace this image URL with your original Aini + dog photo.</p></div></div></section>
+
+<section class="section"><div class="no">03 · Twenty-six</div><h2>A small map of 26.</h2>
+<div class="card"><div style="font:150px/1 'Cormorant Garamond';color:var(--sage);float:left;margin-right:30px">26</div><p class="quote">Twenty-six is not a finish line. It is just a page number.</p><p>There are still places you've never seen, mountains you've never climbed, words you haven't learned, and versions of yourself you haven't met yet.</p><div class="stamps"><span class="stamp">keep learning</span><span class="stamp">keep going</span><span class="stamp">take breaks</span><span class="stamp">go somewhere</span><span class="stamp">come home</span></div><div style="clear:both"></div></div></section>
+
+<section class="section" id="mountains"><div class="no">04 · The explorer</div><h2>Keep climbing.</h2>
+<div class="card mountain"><p class="lead">A little list of the mountains Aini has already left footprints on:</p><div class="trail"><span class="peak">⛰ Merbabu</span><span class="peak">⛰ Lawu</span><span class="peak">⛰ Kawah Ratu</span><span class="peak">⛰ Gunung Gede</span><span class="peak">⛰ Papandayan</span><span class="peak">⛰ Sindoro</span><span class="peak">⛰ Prau</span></div><p class="note">Seven names for now. Probably not the last seven.</p></div></section>
+
+<section class="section" id="travel"><div class="no">05 · The traveler</div><h2>Places that became part of you.</h2>
+<div class="travel"><div class="passport"><div class="kicker" style="color:#e9e5d9;text-align:center">PERSONAL TRAVEL BOOK</div><div class="title">AINI WIJAYA</div><div class="name">11 · 09 · 2000</div></div>
+<div class="card"><p class="lead">Not all journeys need a reason. Sometimes a place becomes memorable simply because you were there.</p><div class="places"><span class="place">Malaysia</span><span class="place">Singapore</span><span class="place">Labuan Bajo</span><span class="place">China</span><span class="place">Taiwan</span><span class="place">Batam</span><span class="place">Japan</span><span class="place">Bali</span><span class="place">Thailand</span><span class="place">Hong Kong</span><span class="place">Nusa Penida</span></div><p class="note">11 places, and still a very long map ahead.</p></div></div></section>
+
+<section class="section"><div class="no">06 · One memory</div><h2>Taiwan, in an elevator.</h2>
+<div class="memory"><div class="card"><div class="chinese">台灣</div><p class="quote">A business trip, a lift, and of course we had to take a photo.</p><p>Sometimes the smallest photographs hold the most ordinary version of a memory — where we were, what we were doing, and the fact that for a moment, we happened to be in the same place.</p><div class="caption">Taiwan · Business Trip 🇹🇼</div></div>
+<div><div class="photo"><img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=85" alt="Replace with Taiwan elevator photo"></div><p class="note">Replace this image URL with the original Taiwan elevator photo.</p></div></div></section>
+
+<section class="section" id="mandarin"><div class="no">07 · The learner</div><h2>Another language, another door.</h2>
+<div class="card"><p class="lead">One word, one sentence, one slightly confusing character at a time.</p><div class="mini-grid"><div class="mini"><strong>努力</strong>effort</div><div class="mini"><strong>勇敢</strong>bravery</div><div class="mini"><strong>堅持</strong>keep going</div><div class="mini"><strong>成長</strong>grow</div><div class="mini"><strong>夢想</strong>dreams</div><div class="mini"><strong>家人</strong>family</div></div><p class="quote">慢慢來，也慢慢變厲害。</p><p class="note">Slowly is still a direction.</p></div></section>
+
+<section class="section" id="work"><div class="no">08 · The hard worker</div><h2>You keep showing up.</h2>
+<div class="grid2"><div class="card"><p class="quote">Some people talk about what they want. You tend to just start doing it.</p><p>You work hard, sometimes harder than you probably need to. And a lot of that effort is for people you love.</p><p>I hope the next chapter has room for something else too: doing things because <em>you</em> want them.</p></div><div class="card"><div class="note">A tiny reminder:</div><p style="font:32px/1.25 'Cormorant Garamond'">You are allowed to want a good life for yourself, too.</p></div></div></section>
+
+<section class="section" id="calm"><div class="no">09 · The quiet pages</div><h2>When the mind gets too loud.</h2>
+<div class="card" style="text-align:center;padding:45px 25px"><div style="font-size:52px">◌</div><p class="lead" style="margin:auto">There are times when you go to meditation camps, just to make a little space inside your head.</p><p class="quote" style="max-width:680px;margin:28px auto">Maybe not every thought needs an answer. Maybe sometimes it just needs somewhere quiet to pass through.</p><p>When everything feels too full, you don't always have to keep moving.</p><p class="chinese">慢慢來。</p><p class="note">Pelan-pelan. Tarik napas. Hari ini tidak harus menyelesaikan semuanya.</p></div></section>
+
+<section class="section" id="family"><div class="no">10 · The people you carry</div><h2>Family.</h2>
+<div class="grid2"><div class="card"><p class="quote">Somewhere in all your plans, there is always a place for home.</p><p>You're someone who cares deeply about family, especially your mom. Sometimes you give more than you should and put other people first without making a big announcement about it.</p><p>That is one of the things I admire about you. But taking care of yourself is not taking away from anyone else.</p></div><div class="card" style="display:grid;place-items:center;min-height:280px"><div class="note" style="font-size:25px;text-align:center">For the people you love.<br>And, finally, a little more for you.</div></div></div></section>
+
+<section class="section" id="letter"><div class="no">11 · The last page</div><h2>A letter to Aini.</h2>
+<div class="letter">
+<p>Dear Aini,</p><p>Happy 26th Birthday.</p>
+<p>Ada orang-orang yang kita temui di sekolah, lalu perlahan hilang begitu saja ketika hidup membawa kita ke tempat yang berbeda. Tapi ada juga yang, entah bagaimana, tetap tinggal.</p>
+<p>Aku masih ingat ketika kita pertama kali bertemu di SMP. Waktu itu rasanya kita belum tahu bahwa pertemuan kecil di usia segitu akan membawa kita sejauh ini — melewati bertahun-tahun, perubahan, perjalanan, dan versi-versi diri kita yang berbeda.</p>
+<p>Sekarang kamu sudah 26.</p>
+<p>Kalau melihat kembali semua yang sudah kamu jalani, rasanya hidupmu seperti sebuah buku yang halamannya selalu bergerak. Ada halaman tentang gunung, tentang perjalanan, tentang pekerjaan yang tidak pernah benar-benar kamu kerjakan setengah hati. Ada halaman tentang belajar Mandarin, tentang keluarga yang selalu kamu pikirkan, dan tentang hari-hari ketika kepalamu terlalu penuh sampai kamu harus pergi mencari sedikit ketenangan.</p>
+<p>Mungkin tidak semua halaman terasa mudah ketika sedang dijalani.</p><p>Tapi mungkin memang begitu cara sebuah cerita menjadi berarti.</p>
+<p>Aku cuma berharap, di antara semua hal yang ingin kamu capai dan semua orang yang ingin kamu bahagiakan, kamu tidak lupa menyisakan beberapa halaman untuk dirimu sendiri.</p>
+<p>Pergilah ke tempat-tempat yang ingin kamu lihat. Naiklah ke gunung yang belum pernah kamu daki. Pelajari kata-kata yang belum kamu mengerti. Duduklah diam ketika memang ingin diam. Dan sesekali, belanjakan sedikit uang untuk sesuatu yang membuatmu bahagia. <span class="note">— serius, ini bagian penting 😭</span></p>
+<p>Karena hidup bukan cuma tentang seberapa jauh kita bisa berjalan.</p>
+<p>Kadang, hidup juga tentang berhenti sebentar, melihat ke belakang, lalu menyadari: <strong>ternyata kita sudah berjalan sejauh ini.</strong></p>
+<p>Jadi, untuk umur 26 — aku tidak ingin mendoakanmu agar hidupmu selalu mudah. Aku hanya berharap ketika hidup menjadi sulit, kamu tetap punya alasan untuk melanjutkan halaman berikutnya.</p>
+<p>Dan kalau suatu hari nanti kita membuka buku ini lagi, semoga kita bisa tersenyum melihat betapa banyak hal yang ternyata berhasil kita lewati.</p>
+<p><strong>Happy 26th, Aini.</strong></p><p>Semoga cerita setelah halaman ini menjadi cerita yang paling ingin kamu baca.</p>
+<div class="signature">— your friend from junior high school, who is still here after all these years ♡</div>
+</div>
+<div style="text-align:center;margin:25px"><button class="btn" onclick="document.getElementById('surprise').classList.toggle('hidden')">Turn the page →</button></div>
+<div id="surprise" class="surprise hidden"><div class="kicker">one last little thing</div><h3>Your next chapter is unwritten.</h3><p>No grand prediction. No perfect plan. Just more places, more people, more ordinary days that somehow become memories.</p><p class="chinese">一步一步來。</p><p class="note">One step at a time.</p></div>
+</section>
+
+<section class="section"><div class="no">12 · Twenty-six wishes</div><h2>For the pages ahead.</h2>
+<div class="wishes">
+<div class="wish"><b>01</b><br>More mountains.</div><div class="wish"><b>02</b><br>More places.</div><div class="wish"><b>03</b><br>More books.</div><div class="wish"><b>04</b><br>More Mandarin.</div>
+<div class="wish"><b>05</b><br>More quiet mornings.</div><div class="wish"><b>06</b><br>More spontaneous plans.</div><div class="wish"><b>07</b><br>More photos together.</div><div class="wish"><b>08</b><br>More reasons to laugh.</div>
+<div class="wish"><b>09</b><br>More rest without guilt.</div><div class="wish"><b>10</b><br>More things just for you.</div><div class="wish"><b>11</b><br>More money saved. 😭</div><div class="wish"><b>12</b><br>And 14 more pages we haven't written yet.</div>
+</div></section>
+
+<div class="footer">Happy 26th, Aini.<br>See you somewhere in the next chapter. ♡</div>
+</main>
+
+<div class="music"><button class="btn" id="musicBtn">♫ Play piano</button></div>
+<script>
+let ctx,playing=false,timer;
+const notes=[261.63,329.63,392,329.63,293.66,349.23,261.63,293.66,329.63,392,349.23,329.63,261.63,329.63,440,392,349.23,329.63];
+function melody(){
+ let t=ctx.currentTime+.05;
+ notes.forEach((f,i)=>{let o=ctx.createOscillator(),g=ctx.createGain(),d=.34;o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.065,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+d+.03);t+=d+.04});
+}
+document.getElementById('musicBtn').onclick=()=>{
+ if(!playing){ctx=new (window.AudioContext||window.webkitAudioContext)();playing=true;melody();timer=setInterval(()=>{if(playing)melody()},7600);document.getElementById('musicBtn').textContent='♫ Piano is playing'}
+ else{playing=false;clearInterval(timer);ctx.close();document.getElementById('musicBtn').textContent='♫ Play piano'}
+};
+</script>
+</body></html>
